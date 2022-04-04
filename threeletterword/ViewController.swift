@@ -7,13 +7,23 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
-    override func viewDidLoad() {
+class ViewController: UIViewController
+    {
+    
+         
+    @IBOutlet var wordlabels: [UILabel]!
+    
+    @IBOutlet weak var currentLetter: UILabel!
+    
+    @IBOutlet weak var stackView: UIStackView!
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func wenttap(_ sender: Any) {
+    }
+    
 }
 
