@@ -43,12 +43,32 @@ class ViewController: UIViewController
         for label in wordlabels
         {
             if
-                label.frame.contains(selectedPoint)
+                label.frame.contains(selectedPoint){
                 
+            }
+            label.text = "\(currentLetter)"
                 
         }
         counter += 1
+        
+        if counter == 26
+        {
+            counter = resetCounter()
+            currentLetter.text = letters[counter]
+            for label in self.wordlabels{
+                label.text = "?"
+            }
+        }
+        
+        
     }
-    
+    func resetCounter() -> Int{
+        let alert = UIAlertController(title: "Resetting Counter",message: nil, preferredStyle: .alert)
+        let okAction=UIAlertAction(title: "OK", style: .default)
+        
+        alert.addAction(okAction)
+        present(alert, animated: true, completion: nil)
+        return 0
+    }
 }
 
